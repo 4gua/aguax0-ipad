@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00A205D12F97E30E007BB299 /* SpeedometerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A205D02F97E307007BB299 /* SpeedometerView.swift */; };
+		00A205D32F97E902007BB299 /* DriveStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A205D22F97E8FD007BB299 /* DriveStateManager.swift */; };
+		00A205D52F97EA03007BB299 /* DrivingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A205D42F97E9FB007BB299 /* DrivingView.swift */; };
+		00A205D72F97EA28007BB299 /* ParkedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A205D62F97EA1B007BB299 /* ParkedView.swift */; };
+		00A205DD2F97F13E007BB299 /* TurnStripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A205DC2F97F128007BB299 /* TurnStripView.swift */; };
+		00A205DF2F97F1C3007BB299 /* SpeedLimitBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A205DE2F97F1BE007BB299 /* SpeedLimitBadge.swift */; };
+		00A205E12F97F209007BB299 /* ETACard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A205E02F97F204007BB299 /* ETACard.swift */; };
+		00A205E32F97F252007BB299 /* NowPlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A205E22F97F24E007BB299 /* NowPlayingCard.swift */; };
+		00A205E52F97F306007BB299 /* VoiceMemoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A205E42F97F302007BB299 /* VoiceMemoButton.swift */; };
+		00A205E72F97F334007BB299 /* MapPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A205E62F97F32F007BB299 /* MapPlaceholderView.swift */; };
+		00A205E92F97F4A5007BB299 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A205E82F97F497007BB299 /* StatusBarView.swift */; };
 		A00000000000000000000030 /* AguaX0iPadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000010 /* AguaX0iPadApp.swift */; };
 		A00000000000000000000031 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000011 /* DashboardView.swift */; };
 		A00000000000000000000032 /* HomeDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000012 /* HomeDashboardView.swift */; };
@@ -24,6 +35,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00A205D02F97E307007BB299 /* SpeedometerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedometerView.swift; sourceTree = "<group>"; };
+		00A205D22F97E8FD007BB299 /* DriveStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriveStateManager.swift; sourceTree = "<group>"; };
+		00A205D42F97E9FB007BB299 /* DrivingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrivingView.swift; sourceTree = "<group>"; };
+		00A205D62F97EA1B007BB299 /* ParkedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkedView.swift; sourceTree = "<group>"; };
+		00A205DC2F97F128007BB299 /* TurnStripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnStripView.swift; sourceTree = "<group>"; };
+		00A205DE2F97F1BE007BB299 /* SpeedLimitBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedLimitBadge.swift; sourceTree = "<group>"; };
+		00A205E02F97F204007BB299 /* ETACard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETACard.swift; sourceTree = "<group>"; };
+		00A205E22F97F24E007BB299 /* NowPlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingCard.swift; sourceTree = "<group>"; };
+		00A205E42F97F302007BB299 /* VoiceMemoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMemoButton.swift; sourceTree = "<group>"; };
+		00A205E62F97F32F007BB299 /* MapPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPlaceholderView.swift; sourceTree = "<group>"; };
+		00A205E82F97F497007BB299 /* StatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
 		A00000000000000000000010 /* AguaX0iPadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AguaX0iPadApp.swift; sourceTree = "<group>"; };
 		A00000000000000000000011 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		A00000000000000000000012 /* HomeDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDashboardView.swift; sourceTree = "<group>"; };
@@ -36,7 +58,7 @@
 		A0000000000000000000001A /* showcase-drive.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "showcase-drive.jpg"; sourceTree = "<group>"; };
 		A0000000000000000000001B /* EmbeddedModelViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedModelViewer.swift; sourceTree = "<group>"; };
 		A0000000000000000000001C /* model-viewer.min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "model-viewer.min.js"; sourceTree = "<group>"; };
-		A0000000000000000000001D /* honda_fit.glb */ = {isa = PBXFileReference; lastKnownFileType = file; path = "honda_fit.glb"; sourceTree = "<group>"; };
+		A0000000000000000000001D /* honda_fit.glb */ = {isa = PBXFileReference; lastKnownFileType = file; path = honda_fit.glb; sourceTree = "<group>"; };
 		A0000000000000000000001E /* ReactPrototypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactPrototypeView.swift; sourceTree = "<group>"; };
 		A0000000000000000000001F /* Prototype */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Prototype; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,6 +74,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00A205D82F97EFA7007BB299 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				00A205E82F97F497007BB299 /* StatusBarView.swift */,
+				00A205D02F97E307007BB299 /* SpeedometerView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		00A205D92F97F076007BB299 /* Driving */ = {
+			isa = PBXGroup;
+			children = (
+				00A205E62F97F32F007BB299 /* MapPlaceholderView.swift */,
+				00A205E42F97F302007BB299 /* VoiceMemoButton.swift */,
+				00A205E22F97F24E007BB299 /* NowPlayingCard.swift */,
+				00A205E02F97F204007BB299 /* ETACard.swift */,
+				00A205DE2F97F1BE007BB299 /* SpeedLimitBadge.swift */,
+				00A205DC2F97F128007BB299 /* TurnStripView.swift */,
+				00A205D42F97E9FB007BB299 /* DrivingView.swift */,
+			);
+			path = Driving;
+			sourceTree = "<group>";
+		};
 		A00000000000000000000002 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +116,7 @@
 		A00000000000000000000004 /* AguaX0iPad */ = {
 			isa = PBXGroup;
 			children = (
+				00A205D82F97EFA7007BB299 /* Shared */,
 				A00000000000000000000010 /* AguaX0iPadApp.swift */,
 				A00000000000000000000011 /* DashboardView.swift */,
 				A0000000000000000000001E /* ReactPrototypeView.swift */,
@@ -86,6 +132,7 @@
 		A00000000000000000000005 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				00A205D92F97F076007BB299 /* Driving */,
 				A00000000000000000000006 /* Home */,
 			);
 			path = Features;
@@ -96,6 +143,7 @@
 			children = (
 				A00000000000000000000012 /* HomeDashboardView.swift */,
 				A0000000000000000000001B /* EmbeddedModelViewer.swift */,
+				00A205D62F97EA1B007BB299 /* ParkedView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -104,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				A00000000000000000000013 /* LocationManager.swift */,
+				00A205D22F97E8FD007BB299 /* DriveStateManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -203,13 +252,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00A205E52F97F306007BB299 /* VoiceMemoButton.swift in Sources */,
+				00A205E12F97F209007BB299 /* ETACard.swift in Sources */,
+				00A205DF2F97F1C3007BB299 /* SpeedLimitBadge.swift in Sources */,
+				00A205E72F97F334007BB299 /* MapPlaceholderView.swift in Sources */,
+				00A205D32F97E902007BB299 /* DriveStateManager.swift in Sources */,
+				00A205E32F97F252007BB299 /* NowPlayingCard.swift in Sources */,
+				00A205D12F97E30E007BB299 /* SpeedometerView.swift in Sources */,
 				A00000000000000000000030 /* AguaX0iPadApp.swift in Sources */,
 				A00000000000000000000031 /* DashboardView.swift in Sources */,
 				A0000000000000000000003C /* ReactPrototypeView.swift in Sources */,
 				A00000000000000000000032 /* HomeDashboardView.swift in Sources */,
 				A00000000000000000000039 /* EmbeddedModelViewer.swift in Sources */,
+				00A205E92F97F4A5007BB299 /* StatusBarView.swift in Sources */,
 				A00000000000000000000033 /* LocationManager.swift in Sources */,
+				00A205DD2F97F13E007BB299 /* TurnStripView.swift in Sources */,
 				A00000000000000000000034 /* AguaTheme.swift in Sources */,
+				00A205D72F97EA28007BB299 /* ParkedView.swift in Sources */,
+				00A205D52F97EA03007BB299 /* DrivingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
