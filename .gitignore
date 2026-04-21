@@ -3,3 +3,7 @@ dist
 .DS_Store
 .local
 *.tar.gz
+tmp/
+**/xcuserdata/
+*.xcuserstate
+ios/**/.DS_Store

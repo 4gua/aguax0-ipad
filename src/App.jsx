@@ -65,6 +65,7 @@ const C = {
 };
 const serif = { fontFamily: '"Cormorant Garamond", serif' };
 const narrow = { fontFamily: '"Archivo Narrow", sans-serif' };
+const IS_NATIVE_IOS = typeof window !== 'undefined' && Boolean(window.AGUA_NATIVE_IOS);
 
 export default function App() {
   const [netStatus, setNetStatus] = useState('checking');
@@ -468,7 +469,7 @@ function MainApp() {
 
   return (
     <div
-      className="w-full min-h-screen flex items-center justify-center p-4"
+      className={`w-full min-h-screen flex items-center justify-center ${IS_NATIVE_IOS ? 'p-0' : 'p-4'}`}
       style={{ background: 'radial-gradient(ellipse at center,#1a120a 0%,#0a0603 50%,#000 100%)', fontFamily: 'Archivo, sans-serif' }}
     >
       <style>{`
@@ -533,58 +534,74 @@ function MainApp() {
         .pring     { animation:pring  2s ease-out    infinite; }
         .alert     { animation:alert  2s ease-in-out infinite; }
         .float     { animation:float  4s ease-in-out infinite; }
+        .glass-panel{
+          background: rgba(255,255,255,0.06);
+          -webkit-backdrop-filter: blur(28px) saturate(160%);
+          backdrop-filter: blur(28px) saturate(160%);
+          border: 1px solid rgba(255,255,255,0.10);
+          box-shadow: inset 0 1px 0 0 rgba(255,255,255,0.08), 0 1px 0 0 rgba(0,0,0,0.25), 0 24px 48px -24px rgba(0,0,0,0.55);
+        }
+        .glass-panel-soft{
+          background: rgba(255,255,255,0.045);
+          -webkit-backdrop-filter: blur(22px) saturate(150%);
+          backdrop-filter: blur(22px) saturate(150%);
+          border: 1px solid rgba(255,255,255,0.085);
+          box-shadow: inset 0 1px 0 0 rgba(255,255,255,0.06), 0 18px 40px -24px rgba(0,0,0,0.42);
+        }
         input[type=range]{-webkit-appearance:none;height:4px;border-radius:2px;background:rgba(201,169,97,.2);outline:none;}
         input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:${C.gold};cursor:pointer;box-shadow:0 0 8px ${C.gold};}
       `}</style>
 
-      <div className="w-full max-w-6xl">
-        <div className="mb-4 rounded-2xl p-4" style={{ background: 'rgba(0,0,0,.45)', border: `1px solid ${C.bronze}30` }}>
-          <div className="flex items-center gap-4 flex-wrap">
-            <div>
-              <div className="text-[9px] uppercase tracking-[.4em]" style={{ ...narrow, color: C.bronze }}>GPS Speed</div>
-              <div className="flex items-baseline gap-1.5">
-                <span style={{ ...serif, fontSize: 32, fontWeight: 400, lineHeight: 1, color: isOver ? C.danger : C.gold, transition: 'color .3s' }}>
-                  {Math.round(speed)}
-                </span>
-                <span className="text-[10px]" style={{ ...narrow, color: C.bronze }}>mph</span>
-              </div>
-            </div>
-            <div className="h-8 w-px" style={{ background: C.bronze, opacity: 0.4 }} />
-            <div>
-              <div className="text-[9px] uppercase tracking-[.4em]" style={{ ...narrow, color: C.bronze }}>Mode</div>
-              <div className="flex items-center gap-1.5 mt-0.5">
-                {mode === 'driving' ? <Car className="w-3.5 h-3.5" style={{ color: C.gold }} /> : <StopCircle className="w-3.5 h-3.5" style={{ color: C.gold }} />}
-                <span style={{ ...serif, color: C.cream, fontSize: 15, fontStyle: 'italic' }}>{mode === 'driving' ? 'Underway' : 'Sanctuary'}</span>
-              </div>
-            </div>
-            <div className="h-8 w-px" style={{ background: C.bronze, opacity: 0.4 }} />
-            <div style={{ minWidth: 150 }}>
-              <div className="text-[9px] uppercase tracking-[.4em]" style={{ ...narrow, color: C.bronze }}>Detection</div>
-              {detecting ? (
-                <div className="mt-1">
-                  <div className="text-[10px]" style={{ ...narrow, color: C.gold }}>{detecting === 'drive' ? 'Confirming motion…' : 'Confirming rest…'}</div>
-                  <div className="mt-1 h-[2px] w-32 rounded-full overflow-hidden" style={{ background: `${C.bronze}40` }}>
-                    <div className="h-full rounded-full" style={{ width: `${detectPct * 100}%`, background: C.gold, transition: 'width .1s' }} />
-                  </div>
+      <div className={`w-full ${IS_NATIVE_IOS ? 'max-w-none px-3 py-3' : 'max-w-6xl'}`}>
+        {!IS_NATIVE_IOS && (
+          <div className="mb-4 rounded-2xl p-4" style={{ background: 'rgba(0,0,0,.45)', border: `1px solid ${C.bronze}30` }}>
+            <div className="flex items-center gap-4 flex-wrap">
+              <div>
+                <div className="text-[9px] uppercase tracking-[.4em]" style={{ ...narrow, color: C.bronze }}>GPS Speed</div>
+                <div className="flex items-baseline gap-1.5">
+                  <span style={{ ...serif, fontSize: 32, fontWeight: 400, lineHeight: 1, color: isOver ? C.danger : C.gold, transition: 'color .3s' }}>
+                    {Math.round(speed)}
+                  </span>
+                  <span className="text-[10px]" style={{ ...narrow, color: C.bronze }}>mph</span>
                 </div>
-              ) : transitioning ? (
-                <div className="text-[10px] mt-1" style={{ ...serif, color: C.goldLight, fontStyle: 'italic' }}>Transitioning…</div>
-              ) : (
-                <div className="text-[10px] mt-1" style={{ ...narrow, color: C.bronze }}>Idle · monitoring</div>
-              )}
+              </div>
+              <div className="h-8 w-px" style={{ background: C.bronze, opacity: 0.4 }} />
+              <div>
+                <div className="text-[9px] uppercase tracking-[.4em]" style={{ ...narrow, color: C.bronze }}>Mode</div>
+                <div className="flex items-center gap-1.5 mt-0.5">
+                  {mode === 'driving' ? <Car className="w-3.5 h-3.5" style={{ color: C.gold }} /> : <StopCircle className="w-3.5 h-3.5" style={{ color: C.gold }} />}
+                  <span style={{ ...serif, color: C.cream, fontSize: 15, fontStyle: 'italic' }}>{mode === 'driving' ? 'Underway' : 'Sanctuary'}</span>
+                </div>
+              </div>
+              <div className="h-8 w-px" style={{ background: C.bronze, opacity: 0.4 }} />
+              <div style={{ minWidth: 150 }}>
+                <div className="text-[9px] uppercase tracking-[.4em]" style={{ ...narrow, color: C.bronze }}>Detection</div>
+                {detecting ? (
+                  <div className="mt-1">
+                    <div className="text-[10px]" style={{ ...narrow, color: C.gold }}>{detecting === 'drive' ? 'Confirming motion…' : 'Confirming rest…'}</div>
+                    <div className="mt-1 h-[2px] w-32 rounded-full overflow-hidden" style={{ background: `${C.bronze}40` }}>
+                      <div className="h-full rounded-full" style={{ width: `${detectPct * 100}%`, background: C.gold, transition: 'width .1s' }} />
+                    </div>
+                  </div>
+                ) : transitioning ? (
+                  <div className="text-[10px] mt-1" style={{ ...serif, color: C.goldLight, fontStyle: 'italic' }}>Transitioning…</div>
+                ) : (
+                  <div className="text-[10px] mt-1" style={{ ...narrow, color: C.bronze }}>Idle · monitoring</div>
+                )}
+              </div>
+              <div className="ml-auto flex gap-2 flex-wrap">
+                <button onClick={tripStart} disabled={transitioning} className="px-3 py-1.5 rounded-lg text-[10px] uppercase tracking-[.25em] disabled:opacity-40" style={{ ...narrow, background: C.goldDim, color: C.gold, border: `1px solid ${C.goldBorder}`, fontWeight: 600 }}>▶ Trip</button>
+                <button onClick={tripEnd} disabled={transitioning} className="px-3 py-1.5 rounded-lg text-[10px] uppercase tracking-[.25em] disabled:opacity-40" style={{ ...narrow, background: 'rgba(0,0,0,.3)', color: C.cream, border: `1px solid ${C.bronze}60`, fontWeight: 600 }}>■ Arrive</button>
+                <button onClick={() => setTrafficOn((t) => !t)} className="px-3 py-1.5 rounded-lg text-[10px] uppercase tracking-[.25em]" style={{ ...narrow, background: trafficOn ? `${C.tRed}25` : 'rgba(0,0,0,.3)', color: trafficOn ? C.tRed : C.cream, border: `1px solid ${trafficOn ? C.tRed : C.bronze + '60'}`, fontWeight: 600 }}>⚠ Traffic</button>
+              </div>
             </div>
-            <div className="ml-auto flex gap-2 flex-wrap">
-              <button onClick={tripStart} disabled={transitioning} className="px-3 py-1.5 rounded-lg text-[10px] uppercase tracking-[.25em] disabled:opacity-40" style={{ ...narrow, background: C.goldDim, color: C.gold, border: `1px solid ${C.goldBorder}`, fontWeight: 600 }}>▶ Trip</button>
-              <button onClick={tripEnd} disabled={transitioning} className="px-3 py-1.5 rounded-lg text-[10px] uppercase tracking-[.25em] disabled:opacity-40" style={{ ...narrow, background: 'rgba(0,0,0,.3)', color: C.cream, border: `1px solid ${C.bronze}60`, fontWeight: 600 }}>■ Arrive</button>
-              <button onClick={() => setTrafficOn((t) => !t)} className="px-3 py-1.5 rounded-lg text-[10px] uppercase tracking-[.25em]" style={{ ...narrow, background: trafficOn ? `${C.tRed}25` : 'rgba(0,0,0,.3)', color: trafficOn ? C.tRed : C.cream, border: `1px solid ${trafficOn ? C.tRed : C.bronze + '60'}`, fontWeight: 600 }}>⚠ Traffic</button>
+            <div className="flex items-center gap-3 mt-3">
+              <span className="text-[9px] uppercase tracking-[.4em] w-16" style={{ ...narrow, color: C.bronze }}>Manual</span>
+              <input type="range" min="0" max="80" value={speed} onChange={(e) => { clearSim(); setSpeed(+e.target.value); }} className="flex-1" />
+              <span className="text-[9px] w-12 text-right" style={{ ...narrow, color: C.bronze }}>0 – 80</span>
             </div>
           </div>
-          <div className="flex items-center gap-3 mt-3">
-            <span className="text-[9px] uppercase tracking-[.4em] w-16" style={{ ...narrow, color: C.bronze }}>Manual</span>
-            <input type="range" min="0" max="80" value={speed} onChange={(e) => { clearSim(); setSpeed(+e.target.value); }} className="flex-1" />
-            <span className="text-[9px] w-12 text-right" style={{ ...narrow, color: C.bronze }}>0 – 80</span>
-          </div>
-        </div>
+        )}
 
         <div className="relative rounded-[28px] overflow-hidden" style={{ aspectRatio: '3/2', background: 'radial-gradient(ellipse at 50% 50%,#1a120a 0%,#0a0603 70%,#050302 100%)', border: `1px solid ${C.bronze}30`, boxShadow: `0 50px 100px -20px rgba(0,0,0,.9),inset 0 0 120px rgba(201,169,97,.04)` }}>
           <div className="absolute inset-0 pointer-events-none z-[5]">
@@ -617,6 +634,30 @@ function MainApp() {
             </div>
           </div>
           <div className="absolute top-[48px] left-5 right-5 h-px z-10" style={{ background: `linear-gradient(to right,transparent,${C.bronze}80,transparent)` }} />
+
+          {IS_NATIVE_IOS && (
+            <div className="glass-panel absolute right-5 bottom-5 z-30 flex items-center gap-1.5 rounded-full px-2 py-2">
+              <span className="px-2 text-[8px] uppercase tracking-[.34em]" style={{ ...narrow, color: mode === 'driving' ? C.gold : C.bronze }}>
+                {mode === 'driving' ? 'Driving' : 'Parked'}
+              </span>
+              <button
+                onClick={tripStart}
+                disabled={transitioning}
+                className="rounded-full px-3 py-1.5 text-[8px] uppercase tracking-[.3em] disabled:opacity-40"
+                style={{ ...narrow, background: C.goldDim, color: C.gold, border: `1px solid ${C.goldBorder}`, fontWeight: 600 }}
+              >
+                Drive
+              </button>
+              <button
+                onClick={tripEnd}
+                disabled={transitioning}
+                className="rounded-full px-3 py-1.5 text-[8px] uppercase tracking-[.3em] disabled:opacity-40"
+                style={{ ...narrow, background: 'rgba(0,0,0,.3)', color: C.cream, border: `1px solid ${C.bronze}60`, fontWeight: 600 }}
+              >
+                Stop
+              </button>
+            </div>
+          )}
 
           <div
             key={mode}
@@ -795,41 +836,52 @@ function ParkedView({ tab, setTab, now, playing, setPlaying, weather, setWeather
 
   return (
     <div className="absolute inset-0 overflow-hidden">
-      <div className="absolute top-[56px] bottom-4 right-0 w-[58%] pointer-events-none">
-        <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-[56px] bottom-4 left-0 right-0 overflow-hidden">
           <img
             src={activeScene.image}
-            alt={activeScene.title}
+            alt=""
+            aria-hidden="true"
             className="absolute inset-0 h-full w-full"
-            style={{ objectFit: 'cover', objectPosition: activeScene.imagePosition, filter: 'brightness(0.78) saturate(0.94) contrast(1.02)' }}
+            style={{
+              objectFit: 'cover',
+              objectPosition: activeScene.imagePosition,
+              filter: 'brightness(0.78) saturate(0.96) contrast(1.02)',
+            }}
           />
           <div
             className="absolute inset-0"
-            style={{ background: 'linear-gradient(90deg, rgba(5,3,2,0.98) 0%, rgba(5,3,2,0.88) 14%, rgba(5,3,2,0.42) 34%, rgba(5,3,2,0.16) 58%, rgba(5,3,2,0.10) 100%)' }}
+            style={{ background: 'rgba(18,28,44,0.18)', mixBlendMode: 'soft-light' }}
           />
           <div
             className="absolute inset-0"
-            style={{ background: 'radial-gradient(circle at 75% 18%, rgba(255,255,255,0.10), transparent 18%), radial-gradient(circle at 62% 72%, rgba(201,169,97,0.12), transparent 24%), linear-gradient(180deg, rgba(255,255,255,0.03), transparent 22%, rgba(0,0,0,0.10) 100%)' }}
+            style={{ background: 'linear-gradient(100deg, rgba(10,14,22,0.94) 0%, rgba(10,14,22,0.88) 25%, rgba(10,14,22,0.55) 50%, rgba(10,14,22,0.15) 68%, rgba(10,14,22,0) 80%)' }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{ background: 'radial-gradient(ellipse 60% 50% at 100% 0%, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 70%)' }}
+          />
+          <div
+            className="absolute inset-x-0 bottom-0 h-[30%]"
+            style={{ background: 'linear-gradient(to top, rgba(10,14,22,0.55) 0%, rgba(10,14,22,0) 100%)' }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.03), transparent 24%, rgba(0,0,0,0.12) 100%)' }}
           />
         </div>
       </div>
 
-      <div className="absolute inset-0 pt-[52px] pb-4 px-5 flex flex-col z-10">
-        <div className="flex items-start justify-between gap-6 mb-2">
-          <div className="pt-1">
-            <div className="text-[9px] uppercase tracking-[.5em] mb-0.5" style={{ ...narrow, color: C.gold }}>{greeting}</div>
-            <div style={{ ...serif, color: C.cream, fontSize: 'clamp(18px,2.6vw,30px)', fontWeight: 300, lineHeight: 1, fontStyle: 'italic' }}>{dayName},</div>
-            <div style={{ ...serif, color: C.cream, fontSize: 'clamp(12px,1.6vw,18px)', fontWeight: 300, opacity: .65, lineHeight: 1.15 }}>{dateLong}</div>
+      <div className="absolute inset-0 pt-[68px] pb-4 px-5 flex flex-col z-10">
+        <div className="glass-panel rounded-[24px] px-5 py-[18px] mb-4">
+          <div className="flex items-start justify-between gap-6">
+            <div className="pt-1 min-w-[280px]">
+              <div className="text-[9px] uppercase tracking-[.5em] mb-0.5" style={{ ...narrow, color: C.gold }}>{greeting}</div>
+              <div style={{ ...serif, color: C.cream, fontSize: 'clamp(18px,2.6vw,30px)', fontWeight: 300, lineHeight: 1, fontStyle: 'italic' }}>{dayName},</div>
+              <div style={{ ...serif, color: C.cream, fontSize: 'clamp(12px,1.6vw,18px)', fontWeight: 300, opacity: .65, lineHeight: 1.15 }}>{dateLong}</div>
+            </div>
+            <ParkedUtilityRail weather={weather} setWeather={setWeather} />
           </div>
-          <ParkedUtilityRail weather={weather} setWeather={setWeather} />
-        </div>
-
-        <div className="flex items-center gap-1.5 mb-3">
-          <div className="h-px flex-1" style={{ background: `linear-gradient(to right,transparent,${C.bronze})` }} />
-          <div className="w-1.5 h-1.5 rotate-45" style={{ background: C.gold }} />
-          <div className="h-px w-5" style={{ background: C.bronze }} />
-          <div className="w-1 h-1 rotate-45" style={{ background: C.gold, opacity: .5 }} />
-          <div className="h-px flex-1" style={{ background: `linear-gradient(to left,transparent,${C.bronze})` }} />
         </div>
 
         <div className="flex-1 min-h-0">
@@ -838,7 +890,7 @@ function ParkedView({ tab, setTab, now, playing, setPlaying, weather, setWeather
         </div>
 
         <div className="mt-3 flex justify-center">
-          <div className="flex items-center gap-1.5 rounded-full px-2 py-1.5" style={{ background: 'rgba(7,5,4,0.44)', border: `1px solid ${C.bronze}35`, backdropFilter: 'blur(10px)' }}>
+          <div className="glass-panel flex items-center gap-1.5 rounded-full px-2 py-1.5">
             {TABS.map(({ id, icon: Icon, lbl }) => (
               <button key={id} onClick={() => setTab(id)} className="flex items-center gap-1.5 rounded-full px-3 py-1.5 transition-all" style={{ background: tab === id ? C.goldDim : 'transparent', color: tab === id ? C.gold : C.bronze, border: `1px solid ${tab === id ? C.gold + '50' : 'transparent'}` }}>
                 <Icon className="w-3.5 h-3.5" />
@@ -888,19 +940,19 @@ function ParkedUtilityRail({ weather, setWeather }) {
   };
 
   return (
-    <div className="grid grid-cols-3 gap-2.5 w-[540px] max-w-[60%]">
-      <button onClick={cycleWeather} className="rounded-xl p-3 flex flex-col justify-between text-left transition-colors duration-500 hover:bg-white/5 active:scale-95" style={{ background: 'rgba(7,5,4,0.36)', border: `1px solid ${C.bronze}30`, backdropFilter: 'blur(10px)' }}>
+    <div className="grid grid-cols-3 gap-2.5 flex-1 max-w-[760px] min-w-0">
+      <button onClick={cycleWeather} className="glass-panel-soft rounded-[18px] p-3 flex flex-col justify-between text-left transition-colors duration-500 hover:bg-white/5 active:scale-95 min-w-0">
         <div className="flex items-center justify-between gap-2">
           <span className="text-[8px] uppercase tracking-[.4em]" style={{ ...narrow, color: C.bronze }}>Outside</span>
           <WeatherIcon className="w-3.5 h-3.5" style={{ color: currentWeather.color }} />
         </div>
         <div className="mt-3">
-          <div style={{ ...serif, color: C.cream, fontSize: 27, fontWeight: 300, lineHeight: 1 }}>{currentWeather.temp}</div>
+          <div style={{ ...serif, color: C.cream, fontSize: 24, fontWeight: 300, lineHeight: 1 }}>{currentWeather.temp}</div>
           <div className="text-[8px] mt-1 truncate" style={{ ...narrow, color: C.cream, opacity: .72 }}>{currentWeather.desc} · {currentWeather.loc}</div>
         </div>
       </button>
 
-      <div className="rounded-xl p-3 flex flex-col justify-between overflow-hidden" style={{ background: 'rgba(7,5,4,0.36)', border: `1px solid ${C.bronze}30`, backdropFilter: 'blur(10px)' }}>
+      <div className="glass-panel-soft rounded-[18px] p-3 flex flex-col justify-between overflow-hidden min-w-0">
         <div className="flex items-center gap-1.5 flex-shrink-0">
           <Mic className="w-3 h-3" style={{ color: C.gold }} />
           <span className="text-[8px] uppercase tracking-[.38em]" style={{ ...narrow, color: C.bronze }}>Latest Memo</span>
@@ -911,13 +963,13 @@ function ParkedUtilityRail({ weather, setWeather }) {
         <div className="text-[8px] flex-shrink-0" style={{ ...narrow, color: C.bronze }}>2:14 PM · Coast Hwy</div>
       </div>
 
-      <div className="rounded-xl p-3 flex flex-col justify-between" style={{ background: 'rgba(7,5,4,0.36)', border: `1px solid ${C.bronze}30`, backdropFilter: 'blur(10px)' }}>
+      <div className="glass-panel-soft rounded-[18px] p-3 flex flex-col justify-between min-w-0">
         <div className="flex items-center gap-1.5">
           <Flame className="w-3 h-3" style={{ color: C.gold }} />
           <span className="text-[8px] uppercase tracking-[.4em]" style={{ ...narrow, color: C.bronze }}>Streak</span>
         </div>
         <div className="flex items-baseline gap-1 mt-2">
-          <span style={{ ...serif, color: C.gold, fontSize: 28, fontWeight: 300, lineHeight: 1 }}>14</span>
+          <span style={{ ...serif, color: C.gold, fontSize: 24, fontWeight: 300, lineHeight: 1 }}>14</span>
           <span className="text-[9px]" style={{ ...narrow, color: C.cream, opacity: .7 }}>days</span>
         </div>
         <div className="flex gap-0.5 items-end h-4 mt-2">
@@ -1031,8 +1083,8 @@ function ParkedHome({ playing, setPlaying, weather }) {
   return (
     <div className="flex-1 flex flex-col gap-3 min-h-0">
       <div
-        className="rounded-2xl overflow-hidden flex flex-col justify-center transition-colors duration-1000"
-        style={{ background: `linear-gradient(135deg,rgba(201,169,97,.08) 0%,rgba(0,0,0,.5) 60%)`, border: `1px solid ${C.goldBorder}`, flex: '1.2', minHeight: 0 }}
+        className="glass-panel rounded-2xl overflow-hidden flex flex-col justify-center transition-colors duration-1000"
+        style={{ flex: '1.2', minHeight: 0 }}
       >
         <div className="grid grid-cols-12 gap-0 items-center">
           <div className="col-span-7 flex flex-col justify-center px-4 py-2">
@@ -1042,10 +1094,24 @@ function ParkedHome({ playing, setPlaying, weather }) {
             </div>
 
             <div
-              className="relative flex items-center justify-center overflow-hidden transition-colors duration-1000"
-              style={{ height: 'clamp(190px, 27vh, 260px)', background: '#090605', borderRadius: 10, margin: '4px 0' }}
+              className="relative flex items-center justify-center transition-colors duration-1000"
+              style={{ height: 'clamp(210px, 29vh, 280px)', margin: '6px 0 4px' }}
             >
               <WeatherOverlay weather={weather} />
+              <div
+                className="absolute inset-x-1 top-3 bottom-0 pointer-events-none"
+                style={{
+                  background: `radial-gradient(ellipse at 50% 82%, ${c.rim}, transparent 58%), radial-gradient(ellipse at 50% 32%, rgba(255,255,255,0.035), transparent 36%)`,
+                  filter: 'blur(10px)',
+                }}
+              />
+              <div
+                className="absolute inset-x-6 bottom-3 h-[42%] pointer-events-none"
+                style={{
+                  background: 'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.12) 56%, rgba(0,0,0,0) 100%)',
+                  filter: 'blur(26px)',
+                }}
+              />
               <svg viewBox="0 0 300 60" className="absolute bottom-0 left-0 right-0 w-full" style={{ height: 36, opacity: .18, pointerEvents: 'none' }}>
                 {[0, .25, .5, .75, 1].map((t, i) => {
                   const y = 60 - t * 55;
@@ -1076,11 +1142,12 @@ function ParkedHome({ playing, setPlaying, weather }) {
                 min-camera-orbit="auto auto 85%"
                 max-camera-orbit="auto auto 165%"
                 style={{
-                  width: '100%',
-                  height: '100%',
+                  width: '110%',
+                  height: '112%',
                   position: 'relative',
                   zIndex: 1,
                   backgroundColor: 'transparent',
+                  transform: 'translateY(1.5%)',
                   ['--poster-color']: 'transparent',
                 }}
               />
@@ -1112,7 +1179,7 @@ function ParkedHome({ playing, setPlaying, weather }) {
             </div>
           </div>
 
-          <div className="col-span-5 flex flex-col justify-center gap-3 py-2 px-5" style={{ borderLeft: `1px solid ${C.bronze}35` }}>
+          <div className="col-span-5 flex flex-col justify-center gap-3 py-2 px-5" style={{ borderLeft: '1px solid rgba(255,255,255,0.07)' }}>
             <div>
               <div className="text-[8px] uppercase tracking-[.4em]" style={{ ...narrow, color: C.bronze }}>Estimated Range</div>
               <div className="flex items-baseline gap-1.5 mt-0.5">
@@ -1142,7 +1209,7 @@ function ParkedHome({ playing, setPlaying, weather }) {
         </div>
       </div>
 
-      <div className="rounded-xl px-4 py-2.5 flex items-center gap-4 flex-shrink-0" style={{ background: 'rgba(0,0,0,.3)', border: `1px solid ${C.bronze}30` }}>
+      <div className="glass-panel rounded-xl px-4 py-2.5 flex items-center gap-4 flex-shrink-0">
         <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: `linear-gradient(135deg,${C.gold},${C.bronze})` }}>
           <Radio className="w-4 h-4" style={{ color: C.ink }} />
         </div>
