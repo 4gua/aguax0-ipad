@@ -18,6 +18,23 @@
 		00A205E52F97F306007BB299 /* VoiceMemoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A205E42F97F302007BB299 /* VoiceMemoButton.swift */; };
 		00A205E72F97F334007BB299 /* MapPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A205E62F97F32F007BB299 /* MapPlaceholderView.swift */; };
 		00A205E92F97F4A5007BB299 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A205E82F97F497007BB299 /* StatusBarView.swift */; };
+		00A205EB2F97FB59007BB299 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A205EA2F97FB54007BB299 /* TabBarView.swift */; };
+		00A205ED2F97FB98007BB299 /* VehicleHeroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A205EC2F97FB95007BB299 /* VehicleHeroView.swift */; };
+		00A205EF2F97FBEC007BB299 /* ContinueListeningCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A205EE2F97FBD8007BB299 /* ContinueListeningCard.swift */; };
+		00A205F12F97FC6F007BB299 /* InfoCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A205F02F97FC6A007BB299 /* InfoCardsView.swift */; };
+		00A205F32F97FF4C007BB299 /* GreetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A205F22F97FF49007BB299 /* GreetingView.swift */; };
+		00A205F62F984719007BB299 /* JourneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A205F52F984715007BB299 /* JourneyView.swift */; };
+		00A205F82F9847EA007BB299 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A205F72F9847E5007BB299 /* SearchBarView.swift */; };
+		00A205FA2F984839007BB299 /* SavedPlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A205F92F984825007BB299 /* SavedPlacesView.swift */; };
+		00A205FC2F98498F007BB299 /* LiveMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A205FB2F984989007BB299 /* LiveMapView.swift */; };
+		00A205FE2F984A35007BB299 /* RecentDestinationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A205FD2F984A31007BB299 /* RecentDestinationsView.swift */; };
+		00A206002F985561007BB299 /* PlaceSuggestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A205FF2F98555C007BB299 /* PlaceSuggestionsView.swift */; };
+		00A206022F985604007BB299 /* SearchCompleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A206012F9855FF007BB299 /* SearchCompleter.swift */; };
+		00A206042F985989007BB299 /* JourneyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A206032F985985007BB299 /* JourneyState.swift */; };
+		00A206082F98996E007BB299 /* AudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A206072F98996A007BB299 /* AudioView.swift */; };
+		00A2060A2F9899B9007BB299 /* NowPlayingFullCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A206092F9899B5007BB299 /* NowPlayingFullCard.swift */; };
+		00A2060C2F989BDE007BB299 /* QueueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A2060B2F989BDA007BB299 /* QueueView.swift */; };
+		00A2060E2F989D4B007BB299 /* PodcastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A2060D2F989D48007BB299 /* PodcastService.swift */; };
 		A00000000000000000000030 /* AguaX0iPadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000010 /* AguaX0iPadApp.swift */; };
 		A00000000000000000000031 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000011 /* DashboardView.swift */; };
 		A00000000000000000000032 /* HomeDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000012 /* HomeDashboardView.swift */; };
@@ -46,6 +63,23 @@
 		00A205E42F97F302007BB299 /* VoiceMemoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMemoButton.swift; sourceTree = "<group>"; };
 		00A205E62F97F32F007BB299 /* MapPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPlaceholderView.swift; sourceTree = "<group>"; };
 		00A205E82F97F497007BB299 /* StatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
+		00A205EA2F97FB54007BB299 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		00A205EC2F97FB95007BB299 /* VehicleHeroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleHeroView.swift; sourceTree = "<group>"; };
+		00A205EE2F97FBD8007BB299 /* ContinueListeningCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueListeningCard.swift; sourceTree = "<group>"; };
+		00A205F02F97FC6A007BB299 /* InfoCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardsView.swift; sourceTree = "<group>"; };
+		00A205F22F97FF49007BB299 /* GreetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingView.swift; sourceTree = "<group>"; };
+		00A205F52F984715007BB299 /* JourneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyView.swift; sourceTree = "<group>"; };
+		00A205F72F9847E5007BB299 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		00A205F92F984825007BB299 /* SavedPlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPlacesView.swift; sourceTree = "<group>"; };
+		00A205FB2F984989007BB299 /* LiveMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveMapView.swift; sourceTree = "<group>"; };
+		00A205FD2F984A31007BB299 /* RecentDestinationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentDestinationsView.swift; sourceTree = "<group>"; };
+		00A205FF2F98555C007BB299 /* PlaceSuggestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSuggestionsView.swift; sourceTree = "<group>"; };
+		00A206012F9855FF007BB299 /* SearchCompleter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCompleter.swift; sourceTree = "<group>"; };
+		00A206032F985985007BB299 /* JourneyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyState.swift; sourceTree = "<group>"; };
+		00A206072F98996A007BB299 /* AudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioView.swift; sourceTree = "<group>"; };
+		00A206092F9899B5007BB299 /* NowPlayingFullCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingFullCard.swift; sourceTree = "<group>"; };
+		00A2060B2F989BDA007BB299 /* QueueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueView.swift; sourceTree = "<group>"; };
+		00A2060D2F989D48007BB299 /* PodcastService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastService.swift; sourceTree = "<group>"; };
 		A00000000000000000000010 /* AguaX0iPadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AguaX0iPadApp.swift; sourceTree = "<group>"; };
 		A00000000000000000000011 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		A00000000000000000000012 /* HomeDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDashboardView.swift; sourceTree = "<group>"; };
@@ -97,6 +131,32 @@
 			path = Driving;
 			sourceTree = "<group>";
 		};
+		00A205F42F984691007BB299 /* Journey */ = {
+			isa = PBXGroup;
+			children = (
+				00A206032F985985007BB299 /* JourneyState.swift */,
+				00A206012F9855FF007BB299 /* SearchCompleter.swift */,
+				00A205FF2F98555C007BB299 /* PlaceSuggestionsView.swift */,
+				00A205FD2F984A31007BB299 /* RecentDestinationsView.swift */,
+				00A205FB2F984989007BB299 /* LiveMapView.swift */,
+				00A205F92F984825007BB299 /* SavedPlacesView.swift */,
+				00A205F72F9847E5007BB299 /* SearchBarView.swift */,
+				00A205F52F984715007BB299 /* JourneyView.swift */,
+			);
+			path = Journey;
+			sourceTree = "<group>";
+		};
+		00A206062F989826007BB299 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				00A2060D2F989D48007BB299 /* PodcastService.swift */,
+				00A2060B2F989BDA007BB299 /* QueueView.swift */,
+				00A206092F9899B5007BB299 /* NowPlayingFullCard.swift */,
+				00A206072F98996A007BB299 /* AudioView.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		A00000000000000000000002 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +192,8 @@
 		A00000000000000000000005 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				00A206062F989826007BB299 /* Audio */,
+				00A205F42F984691007BB299 /* Journey */,
 				00A205D92F97F076007BB299 /* Driving */,
 				A00000000000000000000006 /* Home */,
 			);
@@ -141,6 +203,11 @@
 		A00000000000000000000006 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				00A205F22F97FF49007BB299 /* GreetingView.swift */,
+				00A205F02F97FC6A007BB299 /* InfoCardsView.swift */,
+				00A205EE2F97FBD8007BB299 /* ContinueListeningCard.swift */,
+				00A205EC2F97FB95007BB299 /* VehicleHeroView.swift */,
+				00A205EA2F97FB54007BB299 /* TabBarView.swift */,
 				A00000000000000000000012 /* HomeDashboardView.swift */,
 				A0000000000000000000001B /* EmbeddedModelViewer.swift */,
 				00A205D62F97EA1B007BB299 /* ParkedView.swift */,
@@ -221,6 +288,9 @@
 				Base,
 			);
 			mainGroup = A00000000000000000000002;
+			packageReferences = (
+				00A206052F987B56007BB299 /* XCRemoteSwiftPackageReference "mapbox-navigation-ios" */,
+			);
 			productRefGroup = A00000000000000000000003 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -254,19 +324,36 @@
 			files = (
 				00A205E52F97F306007BB299 /* VoiceMemoButton.swift in Sources */,
 				00A205E12F97F209007BB299 /* ETACard.swift in Sources */,
+				00A205FA2F984839007BB299 /* SavedPlacesView.swift in Sources */,
+				00A206022F985604007BB299 /* SearchCompleter.swift in Sources */,
 				00A205DF2F97F1C3007BB299 /* SpeedLimitBadge.swift in Sources */,
+				00A205F62F984719007BB299 /* JourneyView.swift in Sources */,
 				00A205E72F97F334007BB299 /* MapPlaceholderView.swift in Sources */,
+				00A2060C2F989BDE007BB299 /* QueueView.swift in Sources */,
+				00A205F82F9847EA007BB299 /* SearchBarView.swift in Sources */,
 				00A205D32F97E902007BB299 /* DriveStateManager.swift in Sources */,
 				00A205E32F97F252007BB299 /* NowPlayingCard.swift in Sources */,
+				00A205F12F97FC6F007BB299 /* InfoCardsView.swift in Sources */,
+				00A205EB2F97FB59007BB299 /* TabBarView.swift in Sources */,
+				00A205EF2F97FBEC007BB299 /* ContinueListeningCard.swift in Sources */,
 				00A205D12F97E30E007BB299 /* SpeedometerView.swift in Sources */,
 				A00000000000000000000030 /* AguaX0iPadApp.swift in Sources */,
 				A00000000000000000000031 /* DashboardView.swift in Sources */,
+				00A206002F985561007BB299 /* PlaceSuggestionsView.swift in Sources */,
+				00A2060A2F9899B9007BB299 /* NowPlayingFullCard.swift in Sources */,
 				A0000000000000000000003C /* ReactPrototypeView.swift in Sources */,
+				00A205F32F97FF4C007BB299 /* GreetingView.swift in Sources */,
+				00A206042F985989007BB299 /* JourneyState.swift in Sources */,
 				A00000000000000000000032 /* HomeDashboardView.swift in Sources */,
+				00A205FC2F98498F007BB299 /* LiveMapView.swift in Sources */,
 				A00000000000000000000039 /* EmbeddedModelViewer.swift in Sources */,
+				00A2060E2F989D4B007BB299 /* PodcastService.swift in Sources */,
+				00A206082F98996E007BB299 /* AudioView.swift in Sources */,
+				00A205ED2F97FB98007BB299 /* VehicleHeroView.swift in Sources */,
 				00A205E92F97F4A5007BB299 /* StatusBarView.swift in Sources */,
 				A00000000000000000000033 /* LocationManager.swift in Sources */,
 				00A205DD2F97F13E007BB299 /* TurnStripView.swift in Sources */,
+				00A205FE2F984A35007BB299 /* RecentDestinationsView.swift in Sources */,
 				A00000000000000000000034 /* AguaTheme.swift in Sources */,
 				00A205D72F97EA28007BB299 /* ParkedView.swift in Sources */,
 				00A205D52F97EA03007BB299 /* DrivingView.swift in Sources */,
@@ -316,8 +403,11 @@
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 58443NGX8B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Agua X0 uses your location to power live GPS, speed, and journey experiences.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "AguaX0 uses the microphone for voice destination search and voice memos";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "AguaX0 uses speech recognition to convert your voice into destination searches";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -329,9 +419,10 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -341,8 +432,11 @@
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 58443NGX8B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Agua X0 uses your location to power live GPS, speed, and journey experiences.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "AguaX0 uses the microphone for voice destination search and voice memos";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "AguaX0 uses speech recognition to convert your voice into destination searches";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -354,9 +448,10 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -382,6 +477,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		00A206052F987B56007BB299 /* XCRemoteSwiftPackageReference "mapbox-navigation-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mapbox/mapbox-navigation-ios";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = A00000000000000000000001 /* Project object */;
 }

@@ -14,12 +14,23 @@ struct DashboardView: View {
             Color.black.ignoresSafeArea()
             if driveState.mode == .driving {
                 DrivingView(speed: locationManager.speedMPH)
-                    .transition(.opacity)
+                    .transition(
+                        .asymmetric(
+                            insertion: .opacity.combined(with: .scale(scale: 1.02)),
+                            removal: .opacity.combined(with: .scale(scale: 0.98))
+                        )
+                    )
             } else {
                 ParkedView()
-                    .transition(.opacity)
+                    .transition(
+                        .asymmetric(
+                            insertion: .opacity.combined(with: .scale(scale: 1.02)),
+                            removal: .opacity.combined(with: .scale(scale: 0.98))
+                        )
+                    )
             }
         }
+        .animation(.easeInOut(duration: 0.8), value: driveState.mode)
         .onChange(of: locationManager.speedMPH) { _, speed in
             driveState.update(speed: speed)
         }
